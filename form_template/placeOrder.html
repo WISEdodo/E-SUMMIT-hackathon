@@ -1,161 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place Order</title>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place order</title>
     <style>
-        body {
-            font-family: Poppins, sans-serif;
-            background: linear-gradient(to top, #322021, #2E8B57); /* Green gradient background */
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      body {
+        font-family: Poppins, sans-serif;
+        background: linear-gradient(to top, #322021, #2e8b57);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        .container {
-            background-color: rgba(0, 51, 26, 0.9); /* Darker background for the form */
-            border-radius: 15px;
-            padding: 30px;
-            width: 400px; /* Adjusted width */
-            max-width: 90%; /* Responsive behavior */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* More intense shadow for emphasis */
-        }
+      .container {
+        background-color: rgba(0, 51, 26, 0.9);
+        border-radius: 15px;
+        padding: 30px;
+        width: 400px;
+        max-width: 90%;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
 
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #fff; /* White title */
-        }
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #fff;
+      }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+      .form-group {
+        margin-bottom: 15px;
+      }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            font-size: 14px;
-            color: #aab0ab; /* White text for labels */
-        }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        color: #aab0ab;
+      }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #21352a; /* Green border */
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 14px;
-            background-color: #1a3d26; /* Darker background for form elements */
-            color: white;
-            transition: all 0.3s ease;
-        }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #21352a;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+        background-color: #1a3d26;
+        color: white;
+        transition: all 0.3s ease;
+      }
 
-        input:focus, select:focus, textarea:focus {
-            border-color: #084922; /* Dark green focus border */
-            outline: none;
-            background-color: #2E8B57; /* Lighter green on focus */
-        }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #084922;
+        outline: none;
+        background-color: #2e8b57;
+      }
 
-        .form-row {
-            display: flex;
-            gap: 10px;
-        }
+      .form-row {
+        display: flex;
+        gap: 10px;
+      }
 
-        .form-col {
-            flex: 1;
-        }
+      .form-col {
+        flex: 1;
+      }
 
-        textarea {
-            resize: none;
-        }
+      textarea {
+        resize: none;
+      }
 
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #2E8B57; /* Green button */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #2e8b57;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
 
-        .submit-btn:hover {
-            background-color: #084922; /* Darker green on hover */
-        }
+      .submit-btn:hover {
+        background-color: #084922;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Place Order</h1>
-        <form id="orderForm">
-            <div class="form-row">
-                <div class="form-col">
-                    <div class="form-group">
-                        <label for="customerName">Full Name</label>
-                        <input type="text" id="customerName" name="customerName" required placeholder="Full Name">
-                    </div>
-                </div>
-                <div class="form-col">
-                    <div class="form-group">
-                        <label for="contactNumber">Contact Number</label>
-                        <input type="tel" id="contactNumber" name="contactNumber" required placeholder="Contact Number">
-                    </div>
-                </div>
-            </div>
-
+      <h1>Schedule Pickup</h1>
+      <form id="pickupForm">
+        <div class="form-row">
+          <div class="form-col">
             <div class="form-group">
-                <label for="productType">Product Type</label>
-                <select id="productType" name="productType" required>
-                    <option value="">Select Product Type</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothing">Clothing</option>
-                    <option value="homeAppliance">Home Appliances</option>
-                    <option value="toys">Toys</option>
-                    <option value="other">Other</option>
-                </select>
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Full Name"
+              />
             </div>
-
-            <div class="form-row">
-                <div class="form-col">
-                    <div class="form-group">
-                        <label for="quantity">Quantity</label>
-                        <input type="number" id="quantity" name="quantity" min="1" required placeholder="Quantity">
-                    </div>
-                </div>
-                <div class="form-col">
-                    <div class="form-group">
-                        <label for="orderDate">Order Date</label>
-                        <input type="date" id="orderDate" name="orderDate" required>
-                    </div>
-                </div>
-            </div>
-
+          </div>
+          <div class="form-col">
             <div class="form-group">
-                <label for="shippingAddress">Shipping Address</label>
-                <textarea id="shippingAddress" name="shippingAddress" rows="2" required placeholder="Enter shipping address"></textarea>
+              <label for="contactNumber">Contact Number</label>
+              <input
+                type="tel"
+                id="contactNumber"
+                name="contactNumber"
+                required
+                placeholder="Contact Number"
+              />
             </div>
+          </div>
+        </div>
 
+        <div class="form-group">
+          <label for="wasteType">Type of Waste</label>
+          <select id="wasteType" name="wasteType" required>
+            <option value="">Select Waste Type</option>
+            <option value="electronic">Electronic Waste</option>
+            <option value="plastic">Plastic Waste</option>
+            <option value="metal">Metal Waste</option>
+            <option value="paper">Paper Waste</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-col">
             <div class="form-group">
-                <label for="additionalNotes">Additional Notes</label>
-                <textarea id="additionalNotes" name="additionalNotes" rows="2" placeholder="Enter any additional instructions"></textarea>
+              <label for="wasteWeight">Approx. Weight (kg)</label>
+              <input
+                type="number"
+                id="wasteWeight"
+                name="wasteWeight"
+                min="0"
+                step="0.1"
+                required
+                placeholder="Weight (kg)"
+              />
             </div>
+          </div>
+          <div class="form-col">
+            <div class="form-group">
+              <label for="pickupDate">Pickup Date</label>
+              <input type="date" id="pickupDate" name="pickupDate" required />
+            </div>
+          </div>
+        </div>
 
-            <button type="submit" class="submit-btn">Place Order</button>
-        </form>
+        <div class="form-row">
+          <div class="form-col">
+            <div class="form-group">
+              <label for="pickupTime">Pickup Time</label>
+              <input type="time" id="pickupTime" name="pickupTime" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pickupAddress">Pickup Address</label>
+          <textarea
+            id="pickupAddress"
+            name="pickupAddress"
+            rows="2"
+            required
+            placeholder="Enter address"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="additionalNotes">Additional Notes</label>
+          <textarea
+            id="additionalNotes"
+            name="additionalNotes"
+            rows="2"
+            placeholder="Enter any additional notes"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Schedule Pickup</button>
+      </form>
     </div>
-</body>
+  </body>
 </html>

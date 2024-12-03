@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: Poppins, sans-serif;
-            background: linear-gradient(to top, #322021, #2E8B57); /* Green gradient background */
+            background: linear-gradient(to top, #322021, #2E8B57);
             color: white;
             display: flex;
             justify-content: center;
@@ -22,12 +22,12 @@
         }
 
         .container {
-            background-color: rgba(0, 51, 26, 0.9); /* Darker background for the form */
+            background-color: rgba(0, 51, 26, 0.9);
             border-radius: 15px;
             padding: 30px;
-            width: 400px; /* Adjusted width */
-            max-width: 90%; /* Responsive behavior */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* More intense shadow for emphasis */
+            width: 400px;
+            max-width: 90%;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -35,7 +35,7 @@
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #fff; /* White title */
+            color: #fff;
         }
 
         .form-group {
@@ -47,25 +47,25 @@
             margin-bottom: 5px;
             font-weight: bold;
             font-size: 14px;
-            color: #aab0ab; /* White text for labels */
+            color: #aab0ab;
         }
 
         input, select, textarea {
             width: 100%;
             padding: 10px;
-            border: 2px solid #21352a; /* Green border */
+            border: 2px solid #21352a;
             border-radius: 5px;
             box-sizing: border-box;
             font-size: 14px;
-            background-color: #1a3d26; /* Darker background for form elements */
+            background-color: #1a3d26;
             color: white;
             transition: all 0.3s ease;
         }
 
         input:focus, select:focus, textarea:focus {
-            border-color: #084922; /* Dark green focus border */
+            border-color: #084922;
             outline: none;
-            background-color: #2E8B57; /* Lighter green on focus */
+            background-color: #2E8B57;
         }
 
         .form-row {
@@ -84,7 +84,7 @@
         .submit-btn {
             width: 100%;
             padding: 12px;
-            background-color: #2E8B57; /* Green button */
+            background-color: #2E8B57;
             color: white;
             border: none;
             border-radius: 5px;
@@ -94,7 +94,7 @@
         }
 
         .submit-btn:hover {
-            background-color: #084922; /* Darker green on hover */
+            background-color: #084922;
         }
     </style>
 </head>
@@ -144,14 +144,23 @@
                 </div>
             </div>
 
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="pickupTime">Pickup Time</label>
+                        <input type="time" id="pickupTime" name="pickupTime" required>
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="pickupAddress">Pickup Address</label>
-                <textarea id="pickupAddress" name="pickupAddress" rows="2" required placeholder="Enter text"></textarea>
+                <textarea id="pickupAddress" name="pickupAddress" rows="2" required placeholder="Enter address"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="additionalNotes">Additional Notes</label>
-                <textarea id="additionalNotes" name="additionalNotes" rows="2" placeholder="Enter text"></textarea>
+                <textarea id="additionalNotes" name="additionalNotes" rows="2" placeholder="Enter any additional notes"></textarea>
             </div>
 
             <button type="submit" class="submit-btn">Schedule Pickup</button>
